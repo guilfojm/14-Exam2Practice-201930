@@ -48,7 +48,7 @@ def main():
     run_test_reset()
     # run_test_steal()
     # run_test_get_history()
-    # run_test_combined_box()
+    run_test_combined_box()
 
 
 ###############################################################################
@@ -106,7 +106,7 @@ class Box(object):
         self.contents = contents
         self.original = contents
         self.volume = volume
-        self.originalv = volume
+        self.start = volume
         if len(self.contents) > volume:
             self.contents = ''
 
@@ -356,7 +356,7 @@ class Box(object):
           when this Box was constructed.
         """
         # ---------------------------------------------------------------------
-        # TODO: 7. Implement and test this function.
+        # DONE: 7. Implement and test this function.
         #     The testing code is already written for you (above).
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -364,8 +364,11 @@ class Box(object):
         #    DIFFICULTY:      4
         #    TIME ESTIMATE:   5 minutes.
         # ---------------------------------------------------------------------
+        self.volume = self.start
+        if len(self.original) > self.start:
+            return ''
+        self.contents = self.original
 
-        return Box(self.original, self.originalv)
 
     def steal(self, other_box):
         """
@@ -398,6 +401,8 @@ class Box(object):
         # FOR FULL CREDIT, YOUR SOLUTION MUST BE NO MORE THAN
         #    ** TWO **   LINES OF CODE.
         #######################################################################
+
+
 
     def get_history(self):
         """
@@ -464,7 +469,9 @@ class Box(object):
         #    DIFFICULTY:      4
         #    TIME ESTIMATE:   5 minutes.
         # ---------------------------------------------------------------------
-
+        self.contents += other_box.contents
+        self.volume += other_box.volume
+        
 
 ###############################################################################
 # The TEST functions for the  Box  class begin here.
