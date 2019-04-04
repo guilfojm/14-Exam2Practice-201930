@@ -3,8 +3,8 @@ PRACTICE Exam 2, practice_problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Justin Guilfoyle.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -44,7 +44,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4    ** tests that, taken together,
     #   would form a    ** REASONABLY GOOD test set **
@@ -59,6 +59,37 @@ def run_test_practice_problem2a():
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
 
+    # Test 1
+    expected = [15, 10, 9, 8, 7, 5, 17, 9]
+    actual = practice_problem2a([10, 5, 4, 3, 2, 0, 12, 4], 5)
+    print()
+    print('Expected:', expected)
+    print('Actual:'  , actual)
+    print()
+
+    #Test 2
+    expected = [6, 6, 6, 6]
+    actual = practice_problem2a([0, 0, 0, 0], 6)
+    print()
+    print('Expected:', expected)
+    print('Actual:'  , actual)
+    print()
+
+    #Test 3
+    expected = [7, 7, 7]
+    actual = practice_problem2a([2, 2, 2], 5)
+    print()
+    print('Expected:', expected)
+    print('Actual:'  , actual)
+    print()
+
+    #Test 4
+    expected = [7, 9, 11, 6, 9]
+    actual = practice_problem2a([3, 5, 7, 2, 5], 4)
+    print()
+    print('Expected:', expected)
+    print('Actual:'  , actual)
+    print()
 
 def practice_problem2a(sequence, delta):
     """
@@ -86,6 +117,9 @@ def practice_problem2a(sequence, delta):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ###########################################################################
+    seq = []
+    for k in range(len(sequence)):
+        seq = sequence[k]
 
 
 def run_test_practice_problem2b():
@@ -194,6 +228,7 @@ def practice_problem2b(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
+    str = ''
 
 
 ###############################################################################
