@@ -60,8 +60,8 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
 
     # Test 1
-    expected = [15, 10, 9, 8, 7, 5, 17, 9]
-    actual = practice_problem2a([10, 5, 4, 3, 2, 0, 12, 4], 5)
+    expected = [7]
+    actual = practice_problem2a([2], 5)
     print()
     print('Expected:', expected)
     print('Actual:'  , actual)
@@ -110,17 +110,16 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     WRITE THE TESTS FIRST (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ###########################################################################
-    seq = []
     for k in range(len(sequence)):
-        seq = sequence[k]
-
+        sequence[k] = sequence[k] + delta
+    return sequence
 
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
@@ -228,7 +227,16 @@ def practice_problem2b(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
-    str = ''
+    string = ''
+    s = ''
+    for k in range(len(sequence)):
+        string = sequence[k]
+        print(sequence[k])
+        if string == '':
+            s = ''
+        else:
+            s += string[0]
+    return s
 
 
 ###############################################################################
