@@ -35,10 +35,10 @@ import rosegraphics as rg
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_practice_problem3a()
-    run_test_practice_problem3b()
-    run_test_practice_problem3c()
-    run_test_practice_problem3d()
-    run_test_practice_problem3e()
+    # run_test_practice_problem3b()
+    # run_test_practice_problem3c()
+    # run_test_practice_problem3d()
+    # run_test_practice_problem3e()
 
 
 def is_prime(n):
@@ -180,9 +180,12 @@ def practice_problem3a(circles):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
-    string = ''
+    string = []
     for k in range(len(circles)):
-        string +=
+        circle = circles[k]
+        x = circle.center.x
+        print(x)
+
 
 def run_test_practice_problem3b():
     """ Tests the    practice_problem3b    function. """
@@ -356,7 +359,8 @@ def practice_problem3b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
-
+    for k in range(len(sequence)):
+        
 
 def run_test_practice_problem3c():
     """ Tests the    practice_problem3c    function. """

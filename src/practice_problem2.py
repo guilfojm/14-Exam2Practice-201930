@@ -231,8 +231,8 @@ def practice_problem2b(sequence):
     s = ''
     for k in range(len(sequence)):
         string = sequence[k]
-        print(sequence[k])
         if string == '':
+            print(2)
             s = ''
         else:
             s += string[0]
