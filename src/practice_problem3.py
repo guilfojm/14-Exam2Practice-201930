@@ -34,9 +34,9 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_practice_problem3a()
-    # run_test_practice_problem3b()
-    # run_test_practice_problem3c()
+    #run_test_practice_problem3a()
+    run_test_practice_problem3b()
+    #run_test_practice_problem3c()
     # run_test_practice_problem3d()
     # run_test_practice_problem3e()
 
@@ -173,7 +173,7 @@ def practice_problem3a(circles):
       :type sequence: [rg.Circle]
     """
     ###########################################################################
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -181,10 +181,15 @@ def practice_problem3a(circles):
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
     string = []
+    string2 = []
+    y = 1
+
     for k in range(len(circles)):
         circle = circles[k]
         x = circle.center.x
-        print(x)
+        string += [x]
+        y = y * string[k]
+    return y
 
 
 def run_test_practice_problem3b():
@@ -359,8 +364,15 @@ def practice_problem3b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
+    string = []
+    string += [sequence[len(sequence) - 1]]
     for k in range(len(sequence)):
-        
+        if len(sequence) == 1:
+            return False
+        if sequence[k] == string:
+            return True
+
+
 
 def run_test_practice_problem3c():
     """ Tests the    practice_problem3c    function. """
@@ -476,15 +488,18 @@ def practice_problem3c(sequence):
       :type: sequence: list    or tuple or string
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
-
-
+    string = []
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            string += [k]
+    return string
 def run_test_practice_problem3d():
     """ Tests the    practice_problem3d    function. """
     print()
