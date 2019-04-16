@@ -35,10 +35,10 @@ import rosegraphics as rg
 def main():
     """ Calls the   TEST   functions in this module. """
     #run_test_practice_problem3a()
-    run_test_practice_problem3b()
+    #run_test_practice_problem3b()
     #run_test_practice_problem3c()
-    # run_test_practice_problem3d()
-    # run_test_practice_problem3e()
+    #run_test_practice_problem3d()
+    run_test_practice_problem3e()
 
 
 def is_prime(n):
@@ -352,7 +352,7 @@ def practice_problem3b(sequence):
       :type: sequence: list    or tuple or string
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -366,11 +366,17 @@ def practice_problem3b(sequence):
     ###########################################################################
     string = []
     string += [sequence[len(sequence) - 1]]
-    for k in range(len(sequence)):
-        if len(sequence) == 1:
-            return False
-        if sequence[k] == string:
+    string2 = []
+    print(string)
+    if len(sequence) == 1:
+        return False
+    for k in range(len(sequence) - 1):
+        string2 = [sequence[k]]
+        print(string2)
+        if string2 == string:
             return True
+    return False
+
 
 
 
@@ -614,13 +620,17 @@ def practice_problem3d(sequence):
       :type: sequence: list    or tuple or string
     """
     ###########################################################################
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ###########################################################################
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            return k
+    return -1
 
     ###########################################################################
     # TODO: 6. Just ABOVE this _TODO_, you should have implemented
@@ -765,14 +775,25 @@ def practice_problem3e(sequence):
       :type sequence: list(float)    or tuple(float)
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
-
+    string = []
+    x = 0
+    z = 0
+    if len(sequence) == 1:
+        return sequence[0]
+    for k in range(len(sequence)):
+        if k % 2 == 0:
+            z += 1
+            string += [sequence[k]]
+    for k in range(z):
+        x += string[k]
+    return x
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
